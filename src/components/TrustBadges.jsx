@@ -39,7 +39,7 @@ export default function TrustBadges({ lang }) {
     {
       icon: <PackageCheck className="w-6 h-6 text-indigo-600" />,
       title: b.hygienic,
-      descEn: "Sealed fresh in food-grade eco containers & amber glass bottles",
+      descEn: "Sealed fresh in hygienic food-grade plastic bottles",
       descTa: "சுகாதாரமான பாட்டில்கள் மற்றும் உணவு தர கொள்கலன்களில் அடைக்கப்படுகிறது"
     }
   ];

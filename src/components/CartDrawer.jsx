@@ -14,8 +14,7 @@ export default function CartDrawer({
 }) {
   const t = translations[lang].cart;
 
-  const [couponCode, setCouponCode] = useState('');
-  const [discountPercent, setDiscountPercent] = useState(0);
+
   const [checkoutModalOpen, setCheckoutModalOpen] = useState(false);
 
   // Address & Order State
@@ -28,25 +27,7 @@ export default function CartDrawer({
   const [orderPlaced, setOrderPlaced] = useState(false);
 
   const subtotal = cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0);
-  const discountAmount = Math.round(subtotal * (discountPercent / 100));
-  const shippingFee = subtotal >= 499 || subtotal === 0 ? 0 : 50;
-  const grandTotal = Math.max(0, subtotal - discountAmount + shippingFee);
-
-  const freeShippingThreshold = 499;
-  const progressToFreeShipping = Math.min(100, Math.round((subtotal / freeShippingThreshold) * 100));
-
-  const handleApplyCoupon = (e) => {
-    e.preventDefault();
-    if (couponCode.toUpperCase() === 'SIRAAZHI10') {
-      setDiscountPercent(10);
-      onToast(lang === 'en' ? 'Coupon SIRAAZHI10 Applied! 10% Discount' : '10% தள்ளுபடி கூப்பன் பயன்படுத்தப்பட்டது!', 'success');
-    } else if (couponCode.toUpperCase() === 'FREESHIP') {
-      setDiscountPercent(5);
-      onToast(lang === 'en' ? 'Special Voucher Applied!' : 'சிறப்பு கூப்பன் பயன்படுத்தப்பட்டது!', 'success');
-    } else {
-      onToast(lang === 'en' ? 'Invalid Coupon Code. Try: SIRAAZHI10' : 'தவறான கூப்பன். முயற்சிக்கவும்: SIRAAZHI10', 'error');
-    }
-  };
+  const grandTotal = subtotal;
 
   const handlePlaceOrder = (e) => {
     e.preventDefault();
@@ -90,27 +71,7 @@ export default function CartDrawer({
           </button>
         </div>
 
-        {/* Free Shipping Progress Indicator */}
-        <div className="bg-[#d8f3dc]/60 px-5 py-2.5 border-b border-emerald-200 text-xs">
-          {subtotal >= freeShippingThreshold ? (
-            <p className="font-bold text-emerald-900 flex items-center gap-1.5">
-              <Truck className="w-4 h-4 text-emerald-600" />
-              🎉 You unlocked FREE Delivery across India!
-            </p>
-          ) : (
-            <div>
-              <p className="font-medium text-[#1b4332] mb-1">
-                Add <strong>₹{freeShippingThreshold - subtotal}</strong> more for FREE Delivery!
-              </p>
-              <div className="w-full bg-gray-200 h-1.5 rounded-full overflow-hidden">
-                <div 
-                  className="bg-[#1b4332] h-full transition-all duration-300"
-                  style={{ width: `${progressToFreeShipping}%` }}
-                />
-              </div>
-            </div>
-          )}
-        </div>
+
 
         {/* Cart Item List */}
         <div className="flex-1 overflow-y-auto p-5 space-y-4">
@@ -181,23 +142,7 @@ export default function CartDrawer({
         {cartItems.length > 0 && (
           <div className="p-5 bg-[#faf6ee] border-t border-[#e6dfcf] space-y-3">
             
-            {/* Coupon Code Form */}
-            <form onSubmit={handleApplyCoupon} className="flex gap-2">
-              <input
-                type="text"
-                placeholder="Coupon (e.g. SIRAAZHI10)"
-                value={couponCode}
-                onChange={(e) => setCouponCode(e.target.value)}
-                className="flex-1 px-3 py-2 rounded-xl border border-[#e6dfcf] text-xs uppercase text-[#1b4332] font-bold focus:outline-none"
-              />
-              <button
-                type="submit"
-                className="btn-outline py-2 px-3 text-xs"
-              >
-                <Tag className="w-3.5 h-3.5" />
-                <span>{t.applyBtn}</span>
-              </button>
-            </form>
+
 
             {/* Price Calculations */}
             <div className="space-y-1.5 text-xs text-[#556b62] pt-2 border-t border-[#e6dfcf]">
@@ -205,18 +150,8 @@ export default function CartDrawer({
                 <span>{t.subtotal}</span>
                 <span className="font-bold text-[#1b4332]">₹{subtotal}</span>
               </div>
-              {discountAmount > 0 && (
-                <div className="flex justify-between text-emerald-700 font-bold">
-                  <span>Coupon Discount (10%):</span>
-                  <span>- ₹{discountAmount}</span>
-                </div>
-              )}
-              <div className="flex justify-between">
-                <span>{t.shipping}</span>
-                <span className="font-bold text-[#1b4332]">
-                  {shippingFee === 0 ? 'FREE' : `₹${shippingFee}`}
-                </span>
-              </div>
+
+
               <div className="flex justify-between text-base font-extrabold text-[#1b4332] pt-2 border-t border-gray-200">
                 <span>{t.itemTotal}:</span>
                 <span className="text-[#d4a017]">₹{grandTotal}</span>

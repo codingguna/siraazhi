@@ -57,7 +57,7 @@ input, select, textarea {
 html {
   scroll-behavior: smooth;
   font-size: 16px;
-  scroll-padding-top: 140px;
+  scroll-padding-top: 100px;
 }
 
 body {

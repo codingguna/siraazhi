@@ -13,9 +13,11 @@ export const productsData = [
       { size: '1 Litre', price: 440, originalPrice: 480 }
     ],
     nutrition: {
-      lauricAcid: '52%',
-      vitaminE: 'High',
-      preservatives: '0%',
+      energy: '899.72 Kcal',
+      totalFat: '99g',
+      saturatedFat: '22g',
+      MUFA: '46g',
+      PUFA: '33g'
     },
     bestForEn: 'Daily cooking, South Indian dishes, hair conditioning & oral oil pulling',
     bestForTa: 'தினசரி சமையல், முடி பராமரிப்பு மற்றும் வாய் கொப்பளித்தல்'
@@ -29,15 +31,17 @@ export const productsData = [
     tagline: 'Deep golden marachekku sesame oil extracted from native black sesame seeds.',
     descriptionEn: 'Rich in Sesamol & Sesaminol antioxidants. Helps balance body heat and provides deep traditional aroma.',
     descriptionTa: 'கருப்பு எள்ளில் இருந்து பாரம்பரிய மரச்செக்கில் பெறப்பட்ட சத்துமிக்க நல்லெண்ணெய்.',
-    image: '/assets/sesame_oil.png',
+    image: '/assets/gingelly_oil.png',
     variants: [
       { size: '0.5 Litre (500ml)', price: 200, originalPrice: 220 },
       { size: '1 Litre', price: 420, originalPrice: 450 }
     ],
     nutrition: {
-      sesamol: 'High',
-      calcium: 'Natural',
-      preservatives: '0%',
+      energy: '899.72 Kcal',
+      totalFat: '99g',
+      saturatedFat: '22g',
+      MUFA: '46g',
+      PUFA: '33g'
     },
     bestForEn: 'Chettinad Vatha Kuzhambu, Kara Chutney, oil baths & bone density support',
     bestForTa: 'காரக்குழம்பு, காரச்சட்னி மற்றும் உடல் சூடு தணிய'
@@ -56,9 +60,11 @@ export const productsData = [
       { size: '1 Litre', price: 260, originalPrice: 290 }
     ],
     nutrition: {
-      resveratrol: 'Rich',
-      healthyFats: 'MUFA & PUFA',
-      preservatives: '0%',
+      energy: '899.72 Kcal',
+      totalFat: '99g',
+      saturatedFat: '22g',
+      MUFA: '46g',
+      PUFA: '33g'
     },
     bestForEn: 'High-heat frying, tadka/tempering, snacks & daily curry preparation',
     bestForTa: 'தாளித்தல், வறுவல் மற்றும் அனைத்து வகை சமையல்'
@@ -72,14 +78,16 @@ export const productsData = [
     tagline: 'Pure and wholesome groundnut oil for everyday kitchen cooking.',
     descriptionEn: 'Quality groundnut oil ideal for everyday home frying, curries, and snacks.',
     descriptionTa: 'தினசரி குடும்ப சமையலுக்கு ஏற்ற சுத்தமான கடலை எண்ணெய்.',
-    image: '/assets/groundnut_oil.png',
+    image: '/assets/chekku_groundnut_oil.png',
     variants: [
       { size: '1 Litre', price: 230, originalPrice: 250 }
     ],
     nutrition: {
-      healthyFats: 'MUFA',
-      preservatives: '0%',
-      purity: '100% Pure'
+      energy: '899.72 Kcal',
+      totalFat: '99g',
+      saturatedFat: '22g',
+      MUFA: '46g',
+      PUFA: '33g'
     },
     bestForEn: 'Everyday household cooking, frying & traditional recipes',
     bestForTa: 'தினசரி சமையல் மற்றும் வறுவல்'

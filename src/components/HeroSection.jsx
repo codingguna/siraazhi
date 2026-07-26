@@ -64,7 +64,7 @@ export default function HeroSection({ lang, onExploreClick }) {
               {/* Main Image Container with Organic Border */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-gradient-to-br from-[#1b4332] to-[#2d6a4f] p-2">
                 <img 
-                  src="/assets/hero_oil.png" 
+                  src="/assets/combined_oil.png" 
                   alt="Siraazhi Marachekku Oils" 
                   className="w-full h-[420px] object-cover rounded-2xl hover:scale-105 transition-transform duration-700"
                 />

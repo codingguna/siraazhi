@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sun, Sparkles, Droplets, ShieldCheck, Filter, Container, ChevronRight, Check } from 'lucide-react';
+import { Sun, Sparkles, Droplets, PackageCheck, Filter, Container, ChevronRight, Check } from 'lucide-react';
 import { translations } from '../data/translations';
 
 export default function ProcessVisualizer({ lang }) {
@@ -12,7 +12,7 @@ export default function ProcessVisualizer({ lang }) {
       title: "Seed Sourcing",
       desc: t.step1Desc,
       icon: <Sparkles className="w-5 h-5" />,
-      image: "/assets/copra_seeds.png",
+      image: "/assets/seed_sourcing.png",
       highlight: "Hand-sorted native seeds direct from local farmers"
     },
     {
@@ -20,7 +20,7 @@ export default function ProcessVisualizer({ lang }) {
       title: "Sun Drying",
       desc: t.step2Desc,
       icon: <Sun className="w-5 h-5" />,
-      image: "/assets/black_sesame.png",
+      image: "/assets/sun_drying.png",
       highlight: "100% Sun dried without artificial heat chambers"
     },
     {
@@ -28,7 +28,7 @@ export default function ProcessVisualizer({ lang }) {
       title: "Wooden Pressing",
       desc: t.step3Desc,
       icon: <Droplets className="w-5 h-5" />,
-      image: "/assets/groundnut_oil.png",
+      image: "/assets/wooden_pressing.png",
       highlight: "Rotated in Vagai Wood pestle at low RPM (< 45°C)"
     },
     {
@@ -36,7 +36,7 @@ export default function ProcessVisualizer({ lang }) {
       title: "Sedimentation",
       desc: t.step4Desc,
       icon: <Container className="w-5 h-5" />,
-      image: "/assets/coconut_oil.png",
+      image: "/assets/sedimentation.png",
       highlight: "Allowed to settle for 4-5 days naturally. No chemical solvents!"
     },
     {
@@ -44,16 +44,16 @@ export default function ProcessVisualizer({ lang }) {
       title: "Cloth Filter",
       desc: t.step5Desc,
       icon: <Filter className="w-5 h-5" />,
-      image: "/assets/sesame_oil.png",
+      image: "/assets/cloth_filtering.png",
       highlight: "Unbleached organic cotton double-layer cloth filter"
     },
     {
       id: 5,
-      title: "Glass Bottling",
+      title: "Hygienic Bottling",
       desc: t.step6Desc,
-      icon: <ShieldCheck className="w-5 h-5" />,
-      image: "/assets/hero_oil.png",
-      highlight: "Sealed fresh in amber glass & eco-friendly containers"
+      icon: <PackageCheck className="w-5 h-5" />,
+      image: "/assets/packing.png",
+      highlight: "Sealed fresh in food-grade plastic containers"
     }
   ];
 

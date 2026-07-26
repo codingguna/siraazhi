@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ShoppingBag, Globe, ShieldCheck, Menu, X, PhoneCall, UserCheck } from 'lucide-react';
+import { ShoppingBag, Globe, Menu, X, UserCheck } from 'lucide-react';
 import { translations } from '../data/translations';
 
 export default function Navbar({ 
@@ -46,34 +46,7 @@ export default function Navbar({
 
   return (
     <header className="sticky top-0 z-40 w-full transition-all duration-300 bg-[#faf6ee] border-b border-[#e6dfcf] shadow-sm">
-      {/* Top Banner Bar */}
-      <div className="bg-[#1b4332] text-[#faf6ee] text-xs py-2 px-4">
-        <div className="container-custom flex flex-col sm:flex-row justify-between items-center gap-2">
-          <div className="flex items-center gap-4">
-            <span className="flex items-center gap-1.5 font-medium text-[#f4c430]">
-              <ShieldCheck className="w-4 h-4" /> FSSAI Lic #12423031000494
-            </span>
-            <span className="hidden md:inline text-emerald-200/60">|</span>
-            <span className="hidden md:inline text-emerald-100 font-normal">
-              🌾 100% Traditional Vagai Wood Marachekku Press
-            </span>
-          </div>
-          <div className="flex items-center gap-4">
-            <a href="tel:+919842012345" className="flex items-center gap-1 hover:text-[#f4c430] transition-colors">
-              <PhoneCall className="w-3.5 h-3.5" /> +91 98420 12345
-            </a>
-            {/* Language Switcher */}
-            <button 
-              onClick={() => setLang(lang === 'en' ? 'ta' : 'en')}
-              className="flex items-center gap-1 bg-[#2d6a4f] hover:bg-[#40916c] text-[#faf6ee] px-2.5 py-1 rounded-full transition-all font-semibold text-xs border-none cursor-pointer"
-              title="Toggle English / Tamil"
-            >
-              <Globe className="w-3.5 h-3.5 text-[#f4c430]" />
-              <span>{lang === 'en' ? 'தமிழ்' : 'English'}</span>
-            </button>
-          </div>
-        </div>
-      </div>
+
 
       {/* Main Navbar */}
       <nav className={`w-full transition-all duration-300 ${
@@ -127,8 +100,18 @@ export default function Navbar({
             ))}
           </div>
 
-          {/* Action Buttons: Admin Toggle + Cart */}
+          {/* Action Buttons: Language Switcher, Admin Toggle, Cart */}
           <div className="flex items-center gap-3">
+            {/* Language Switcher */}
+            <button 
+              onClick={() => setLang(lang === 'en' ? 'ta' : 'en')}
+              className="hidden sm:flex items-center gap-1.5 bg-[#2d6a4f] hover:bg-[#40916c] px-3 py-1.5 rounded-full transition-all font-semibold text-xs border-none cursor-pointer shadow-sm"
+              title="Toggle English / Tamil"
+            >
+              <Globe className="w-3.5 h-3.5" />
+              <span>{lang === 'en' ? 'தமிழ்' : 'English'}</span>
+            </button>
+
             {/* Admin Toggle */}
             <button
               onClick={() => setIsAdmin(!isAdmin)}
@@ -180,13 +163,24 @@ export default function Navbar({
                 {link.label}
               </button>
             ))}
-            <div className="pt-2 flex items-center justify-between">
+            <div className="pt-2 flex flex-col gap-3 border-t border-gray-100">
+              <button 
+                onClick={() => {
+                  setLang(lang === 'en' ? 'ta' : 'en');
+                  setMobileMenuOpen(false);
+                }}
+                className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#1b4332] font-bold text-sm shadow-sm"
+              >
+                <Globe className="w-4 h-4" />
+                <span>{lang === 'en' ? 'Switch to தமிழ் (Tamil)' : 'ஆங்கிலத்திற்கு மாறு (English)'}</span>
+              </button>
+
               <button
                 onClick={() => {
                   setIsAdmin(!isAdmin);
                   setMobileMenuOpen(false);
                 }}
-                className="flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-[#1b4332] font-bold text-xs"
+                className="flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-[#1b4332] font-bold text-sm"
               >
                 <UserCheck className="w-4 h-4" />
                 <span>{isAdmin ? 'Exit Admin Mode' : t.nav.admin}</span>

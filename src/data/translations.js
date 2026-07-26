@@ -31,7 +31,7 @@ export const translations = {
       fssai: "FSSAI Lic. #12423031000494",
       farmDirect: "Direct Sourced Raw Seeds",
       labTested: "Batch-wise Lab Tested",
-      hygienic: "Hygienic Glass Packaging"
+      hygienic: "Hygienic Plastic Packaging"
     },
     products: {
       title: "Retail Products",
@@ -61,8 +61,8 @@ export const translations = {
       step4Desc: "Oil is allowed to settle naturally in food-grade tanks for 4-5 days. No chemical refining.",
       step5Title: "5. Double Cloth Filtration",
       step5Desc: "Passed through unbleached organic cotton cloth to retain rich aroma, natural color, and antioxidant vitamins.",
-      step6Title: "6. Glass & Eco Bottling",
-      step6Desc: "Sealed fresh in amber glass and food-grade containers to protect against UV degradation."
+      step6Title: "6. Food-Grade Bottling",
+      step6Desc: "Sealed fresh in food-grade plastic containers."
     },
     wholesale: {
       title: "Wholesale & Raw Seed Inquiries",
@@ -134,8 +134,9 @@ export const translations = {
       quickLinks: "Quick Navigation",
       contactTitle: "Registered Office & Factory",
       address: "No. 4/165, Pondy Main Road, Thailapuram Village & Post, Vanur, Villupuram, Tamil Nadu – 604102",
-      phone: "+91 98420 12345 / +91 94430 67890",
-      email: "care@siraazhi.com",
+      name: "Thangaraj",
+      phone: "+91 9751680093",
+      email: "vanurfpcl@gmail.com",
       fssaiTitle: "FSSAI License No. 12423031000494",
       fssaiDesc: "State License (Active) | Villupuram, Tamil Nadu",
       copyright: "© 2026 VANUR FARMER PRODUCER COMPANY LIMITED. All Rights Reserved."
@@ -204,7 +205,7 @@ export const translations = {
       step5Title: "5. இரட்டை பருத்தி துணி வடிகட்டுதல்",
       step5Desc: "இயற்கையான பருத்தி துணியில் வடிகட்டப்பட்டு வாசனை மற்றும் வைட்டமின்கள் பாதுகாக்கப்படுகிறது.",
       step6Title: "6. பாதுகாப்பான பாட்டில் அடைப்பு",
-      step6Desc: "சுத்தமான கண்ணாடி மற்றும் உணவு தர பாட்டில்களில் அடைக்கப்பட்டு விநியோகிக்கப்படுகிறது."
+      step6Desc: "சுத்தமான உணவு தர பிளாஸ்டிக் பாட்டில்களில் அடைக்கப்பட்டு விநியோகிக்கப்படுகிறது."
     },
     wholesale: {
       title: "மொத்த விற்பனை & தானியங்கள்",
@@ -276,8 +277,9 @@ export const translations = {
       quickLinks: "விரைவு இணைப்புகள்",
       contactTitle: "பதிவு அலுவலகம் & பண்ணை",
       address: "எண். 4/165, பாண்டி மெயின் ரோடு, தைலாபுரம் கிராமம், வானூர், விழுப்புரம் மாவட்டம், தமிழ்நாடு - 604102",
-      phone: "+91 98420 12345 / +91 94430 67890",
-      email: "care@siraazhi.com",
+      name: "தங்கராஜ்",
+      phone: "+91 9751680093",
+      email: "vanurfpcl@gmail.com",
       fssaiTitle: "FSSAI எண்: 12423031000494",
       fssaiDesc: "மாநில உரிமம் (Active) | விழுப்புரம், தமிழ்நாடு",
       copyright: "© 2026 வானூர் உழவர் உற்பத்தியாளர் நிறுவனம். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை."

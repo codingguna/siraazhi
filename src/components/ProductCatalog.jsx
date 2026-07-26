@@ -246,6 +246,38 @@ export default function ProductCatalog({ lang, onAddToCart, _onQuickView }) {
                   </p>
                 </div>
 
+                {/* Volume / Size Variant Selector in Modal */}
+                <div>
+                  <label className="block text-[11px] font-extrabold uppercase tracking-wider text-gray-500 mb-1.5">
+                    {t.volumeLabel}
+                  </label>
+                  <div className="grid grid-cols-3 gap-2">
+                    {quickViewProduct.variants.map((variant, vIdx) => {
+                      const isSelected = (selectedVariants[quickViewProduct.id] || 0) === vIdx;
+                      return (
+                        <button
+                          key={vIdx}
+                          onClick={() => handleVariantChange(quickViewProduct.id, vIdx)}
+                          className={`py-2 px-1.5 rounded-xl text-xs font-bold transition-all border text-center cursor-pointer ${
+                            isSelected
+                              ? 'text-white shadow-xs'
+                              : 'bg-[#faf6ee] text-[#1b4332] border-[#e6dfcf] hover:border-[#1b4332]'
+                          }`}
+                          style={{ 
+                            backgroundColor: isSelected ? '#1b4332' : undefined,
+                            borderColor: isSelected ? '#1b4332' : undefined
+                          }}
+                        >
+                          <div className="text-[11px] leading-tight font-medium">{variant.size}</div>
+                          <div className={`text-xs font-extrabold mt-0.5 ${isSelected ? 'text-amber-300' : 'text-[#d4a017]'}`}>
+                            ₹{variant.price}
+                          </div>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+
                 <div className="pt-4 border-t border-[#e6dfcf] flex items-center justify-between">
                   <span className="text-2xl font-extrabold text-[#1b4332]">
                     ₹{getSelectedVariant(quickViewProduct).price}

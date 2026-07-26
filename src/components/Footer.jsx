@@ -36,10 +36,6 @@ export default function Footer({ lang, onNavigate }) {
               {t.aboutDesc}
             </p>
 
-            <div className="flex items-center gap-2 text-xs text-[#f4c430] font-bold">
-              <ShieldCheck className="w-4 h-4" />
-              <span>FSSAI License #12424999000123 • MSME Producer Co.</span>
-            </div>
           </div>
 
           {/* Col 2: Quick Links */}
@@ -85,7 +81,7 @@ export default function Footer({ lang, onNavigate }) {
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-[#f4c430] shrink-0 mt-0.5" />
                 <a 
-                  href="https://goo.gl/maps/rb6LhEdFFpsp5Ap96?g_st=aw" 
+                  href="https://maps.app.goo.gl/bDNvJrybhVXqfM1x9?g_st=aw" 
                   target="_blank" 
                   rel="noreferrer"
                   className="hover:text-[#f4c430] transition-colors underline"
@@ -102,11 +98,11 @@ export default function Footer({ lang, onNavigate }) {
               </li>
               <li className="flex items-center gap-2 pt-1">
                 <Phone className="w-4 h-4 text-[#f4c430] shrink-0" />
-                <span>{t.phone}</span>
+                <span>{t.name} - <a href={`tel:${t.phone}`}>{t.phone}</a></span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-[#f4c430] shrink-0" />
-                <span>{t.email}</span>
+                <a href={`mailto:${t.email}`}>{t.email}</a>
               </li>
             </ul>
           </div>

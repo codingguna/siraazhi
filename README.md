@@ -1,7 +1,5 @@
-
-# 🌿 Siraazhi (சீராழி)
-## தூய மரச்செக்கு எண்ணெய்கள் மற்றும் இயற்கை ஆரோக்கிய தளம்
-## Authentic Marachekku Oils & Organic Wellness Platform
+# 🌿 சீராழி (Siraazhi) — தூய மரச்செக்கு எண்ணெய்கள்
+## Authentic Marachekku Oils
 
 [![React](https://img.shields.io/badge/React-19.2-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-8.1-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vite.dev/)
@@ -9,9 +7,9 @@
 [![Oxlint](https://img.shields.io/badge/Oxlint-1.71-orange?style=for-the-badge&logo=oxc&logoColor=white)](https://oxc.rs/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
 
-**தமிழ்**: **சீராழி (Siraazhi)** என்பது தென்னிந்தியாவின் பாரம்பரிய மரச்செக்கு எண்ணெய் மற்றும் இயற்கை ஆரோக்கியப் பொருட்களுக்கான ஒரு நவீன இணையதளமாகும். பழங்கால பாரம்பரியமான **வாகை மரச்செக்கு** முறையோடு அதிநவீன இ-காமர்ஸ் மற்றும் B2B டிஜிட்டல் அனுபவத்தை **React 19**, **Vite**, **Tailwind CSS v4** மற்றும் **Lucide React** போன்ற தொழில்நுட்பங்களின் உதவியுடன் ஒருங்கிணைக்கிறது.
+**தமிழ்**: **சீராழி (Siraazhi)** என்பது தென்னிந்தியாவின் பாரம்பரிய மரச்செக்கு எண்ணெய் மற்றும் இயற்கை விவசாயப் பொருட்களுக்கான ஒரு நவீன இணையதளமாகும். பழங்கால பாரம்பரியமான **வாகை மரச்செக்கு** முறையோடு அதிநவீன இ-காமர்ஸ் மற்றும் B2B டிஜிட்டல் அனுபவத்தை **React 19**, **Vite**, **Tailwind CSS v4** மற்றும் **Lucide React** போன்ற தொழில்நுட்பங்களின் உதவியுடன் ஒருங்கிணைக்கிறது.
 
-**English**: **Siraazhi (சீராழி)** is a modern, high-performance web platform for an authentic South Indian marachekku oil and organic wellness brand. Siraazhi blends ancient traditional heritage—such as native **Vagai Wood Marachekku (மரச்செக்கு)** oil extraction—with a state-of-the-art e-commerce & B2B digital experience built using **React 19**, **Vite**, **Tailwind CSS v4**, and **Lucide React**.
+**English**: **Siraazhi (சீராழி)** is a modern, high-performance web platform for an authentic South Indian marachekku oil brand. Siraazhi blends ancient traditional heritage—such as native **Vagai Wood Marachekku (மரச்செக்கு)** oil extraction—with a state-of-the-art e-commerce & B2B digital experience built using **React 19**, **Vite**, **Tailwind CSS v4**, and **Lucide React**.
 
 ---
 
