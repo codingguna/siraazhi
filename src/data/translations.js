@@ -1,8 +1,8 @@
 export const translations = {
   en: {
-    brandName: "Sirazhi",
-    brandTagline: "Traditional Cold Pressed Oils & Seeds",
-    taglineSub: "100% Pure Wooden Marachekku Extraction • Zero Chemicals • Farm Sourced",
+    brandName: "Siraazhi",
+    brandTagline: "Traditional Marachekku Oils & Seeds",
+    taglineSub: "100% Pure Wooden Marachekku Extraction • Zero Chemicals • Vanur Farmer Producer Co.",
     nav: {
       home: "Home",
       products: "Store",
@@ -10,36 +10,34 @@ export const translations = {
       benefits: "Health Benefits",
       recipes: "Traditional Recipes",
       wholesale: "Wholesale & Seeds",
-      reviews: "Reviews",
       contact: "Contact",
       admin: "Admin Dashboard"
     },
     hero: {
-      badge: "Est. 2024 • 2 Years of Purity & Trust",
+      badge: "Vanur Farmer Producer Company Ltd.",
       title: "From Our Farm to Your Kitchen",
-      subtitle: "Pure, nutrient-dense oils extracted slowly using traditional Vagai wood Marachekku. No refining, no preservatives, just 100% natural goodness.",
+      subtitle: "Pure, nutrient-dense oils extracted slowly using traditional Vagai wood Marachekku. Produced & packed by Vanur Farmer Producer Co. Ltd.",
       shopBtn: "Shop Retail Products",
-      storyBtn: "Our Farm Journey",
-      stat1Label: "Pure Cold-Pressed Oils",
+      stat1Label: "Pure Marachekku Oils",
       stat1Val: "100%",
       stat2Label: "Satisfied Families",
       stat2Val: "15,000+",
       stat3Label: "Traditional Pressing Temp",
-      stat3Val: "< 45°C"
+      stat3Val: "<45°C"
     },
     badges: {
       marachekku: "100% Wooden Marachekku",
       noChemicals: "Zero Solvent & Hexane Free",
-      fssai: "FSSAI Food Safety Certified",
+      fssai: "FSSAI Lic. #12423031000494",
       farmDirect: "Direct Sourced Raw Seeds",
       labTested: "Batch-wise Lab Tested",
       hygienic: "Hygienic Glass Packaging"
     },
     products: {
       title: "Retail Products",
-      subtitle: "Freshly pressed cold-pressed oils & sun-dried premium raw seeds",
+      subtitle: "Freshly pressed marachekku oils & sun-dried premium raw seeds",
       all: "All Products",
-      oils: "Cold Pressed Oils",
+      oils: "Marachekku Oils",
       seeds: "Raw Farm Seeds",
       packs: "Value Bundles",
       addToCart: "Add to Cart",
@@ -52,9 +50,9 @@ export const translations = {
     },
     process: {
       title: "Our Marachekku Extraction Process",
-      subtitle: "Discover how we preserve heat-sensitive nutrients using 40-year traditional wooden pestle techniques",
+      subtitle: "Discover how Vanur Farmer Producer Co. preserves heat-sensitive nutrients using traditional wooden pestle techniques",
       step1Title: "1. Premium Seed Sourcing",
-      step1Desc: "Hand-picked high-oil content coconuts, groundnuts, and sesame seeds directly from trusted local farmers.",
+      step1Desc: "Hand-picked high-oil content coconuts, groundnuts, and sesame seeds directly from trusted local farmers in Villupuram district.",
       step2Title: "2. Sun Drying & Cleaning",
       step2Desc: "Seeds are naturally sun-dried to optimal moisture levels without artificial heaters.",
       step3Title: "3. Slow Wooden Marachekku Pressing",
@@ -68,7 +66,7 @@ export const translations = {
     },
     wholesale: {
       title: "Wholesale & Raw Seed Inquiries",
-      subtitle: "Supplying high-grade seeds and bulk oil barrels to commercial kitchens, restaurants, and retail distributors.",
+      subtitle: "Supplying high-grade seeds and bulk oil barrels directly from Vanur Farmer Producer Co. Ltd.",
       seedCatalog: "Raw Seed Catalog (Retail & Bulk)",
       quoteBuilder: "Instant Bulk Price Quote Calculator",
       selectProduct: "Select Commodity:",
@@ -85,11 +83,11 @@ export const translations = {
       submitRfq: "Submit Bulk Order Inquiry"
     },
     benefits: {
-      title: "Why Choose Cold-Pressed Oils?",
+      title: "Why Choose Marachekku Oils?",
       subtitle: "Comparing traditional wooden-pressed oils with factory refined oil",
       marachekkuVsRefined: "Marachekku Oil vs Refined Industrial Oil",
       param: "Feature",
-      maraCol: "Sirazhi Marachekku Oil",
+      maraCol: "Siraazhi Marachekku Oil",
       refCol: "Refined Factory Oil",
       temp: "Extraction Temp",
       tempMara: "Low (< 45°C)",
@@ -106,7 +104,7 @@ export const translations = {
     },
     cart: {
       title: "Your Shopping Basket",
-      empty: "Your cart is empty. Explore our pure cold pressed oils!",
+      empty: "Your cart is empty. Explore our pure marachekku oils!",
       subtotal: "Subtotal:",
       shipping: "Shipping Fee:",
       freeShippingNote: "Add ₹499 more for FREE Home Delivery across India!",
@@ -116,7 +114,7 @@ export const translations = {
       applyBtn: "Apply"
     },
     admin: {
-      title: "Sirazhi Merchant Portal",
+      title: "Vanur FPC Owner Portal",
       subtitle: "Manage daily orders, stock inventory, and wholesale inquiries",
       salesToday: "Today's Sales",
       ordersPending: "Pending Dispatch",
@@ -131,20 +129,22 @@ export const translations = {
       action: "Action"
     },
     footer: {
-      aboutTitle: "About Sirazhi Producer Co.",
-      aboutDesc: "Sirazhi is committed to reviving traditional South Indian Marachekku oil extraction. Pure, chemical-free oils and farm seeds directly delivered to your door.",
+      aboutTitle: "VANUR FARMER PRODUCER COMPANY LIMITED",
+      aboutDesc: "Vanur Farmer Producer Co. Ltd. (Incorporated 8 Dec 2022, MCA Status: Active) is dedicated to producing 100% pure Marachekku oils and farm-fresh seeds under the Siraazhi (சீராழி) brand.",
       quickLinks: "Quick Navigation",
-      contactTitle: "Factory & Farm Contact",
-      address: "124 Farmers Produce Road, Kangeyam / Pollachi Belt, Tamil Nadu - 638701",
+      contactTitle: "Registered Office & Factory",
+      address: "No. 4/165, Pondy Main Road, Thailapuram Village & Post, Vanur, Villupuram, Tamil Nadu – 604102",
       phone: "+91 98420 12345 / +91 94430 67890",
-      email: "care@sirazhi.com",
-      copyright: "© 2026 Sirazhi Producer Company. All Rights Reserved."
+      email: "care@siraazhi.com",
+      fssaiTitle: "FSSAI License No. 12423031000494",
+      fssaiDesc: "State License (Active) | Villupuram, Tamil Nadu",
+      copyright: "© 2026 VANUR FARMER PRODUCER COMPANY LIMITED. All Rights Reserved."
     }
   },
   ta: {
-    brandName: "சிறாழி",
+    brandName: "சீராழி",
     brandTagline: "பாரம்பரிய மரச்செக்கு எண்ணெய் மற்றும் தானியங்கள்",
-    taglineSub: "100% தூய்மையான வாகை மரச்செக்கு தயாரிப்பு • வேதிப்பொருட்கள் அற்றது • நேரடியாக பண்ணையிலிருந்து",
+    taglineSub: "100% தூய்மையான வாகை மரச்செக்கு தயாரிப்பு • வானூர் உழவர் உற்பத்தியாளர் நிறுவனம்",
     nav: {
       home: "முகப்பு",
       products: "பொருட்கள்",
@@ -152,27 +152,25 @@ export const translations = {
       benefits: "நன்மைகள்",
       recipes: "பாரம்பரிய சமையல்",
       wholesale: "மொத்த விற்பனை & விதைகள்",
-      reviews: "மதிப்புரைகள்",
       contact: "தொடர்புக்கு",
       admin: "நிர்வாகி பகுதி"
     },
     hero: {
-      badge: "நிறுவப்பட்டது 2024 • 2 ஆண்டுகள் தூய்மையும் நம்பிக்கையும்",
+      badge: "நிறுவப்பட்டது டிசம்பர் 2022 • வானூர் உழவர் உற்பத்தியாளர் நிறுவனம்",
       title: "எங்கள் பண்ணையிலிருந்து உங்கள் சமையலறைக்கு",
-      subtitle: "பாரம்பரிய வாகை மரச்செக்கில் மெதுவாக ஆட்டப்பட்ட 100% இயற்கை தேங்காய், கடலை மற்றும் நல்லெண்ணெய். இரசாயனங்கள் இல்லா தூய்மை.",
+      subtitle: "வானூர் உழவர் உற்பத்தியாளர் நிறுவனத்தின் 100% இயற்கை மரச்செக்கு தேங்காய், கடலை மற்றும் நல்லெண்ணெய்.",
       shopBtn: "பொருட்களை வாங்குக",
-      storyBtn: "எங்கள் பயணம்",
       stat1Label: "தூய செக்கு எண்ணெய்",
       stat1Val: "100%",
       stat2Label: "மகிழ்ச்சியான குடும்பங்கள்",
       stat2Val: "15,000+",
       stat3Label: "செக்கு ஆட்டும் வெப்பநிலை",
-      stat3Val: "< 45°C"
+      stat3Val: "<45°C"
     },
     badges: {
       marachekku: "100% வாகை மரச்செக்கு",
       noChemicals: "இரசாயனம் மற்றும் ஹெக்சேன் அற்றது",
-      fssai: "FSSAI உணவு பாதுகாப்பு சான்றிதழ்",
+      fssai: "FSSAI எண்: 12423031000494",
       farmDirect: "நேரடி பண்ணை விதைகள்",
       labTested: "ஆய்வக சோதன செய்யப்பட்டது",
       hygienic: "பாதுகாப்பான பாட்டில் பேக்கிங்"
@@ -196,7 +194,7 @@ export const translations = {
       title: "மரச்செக்கு எண்ணெய் தயாரிப்பு படிநிலைகள்",
       subtitle: "பாரம்பரிய முறையில் சத்துக்கள் அழியாமல் எண்ணெய் எடுக்கும் முறை",
       step1Title: "1. தரமான விதை தேர்வு",
-      step1Desc: "பண்ணையிலிருந்து நேரடியாக பெறப்பட்ட உயர்தர தேங்காய், நிலக்கடலை மற்றும் எள் விதைகள்.",
+      step1Desc: "விழுப்புரம் மாவட்ட பண்ணைகளிலிருந்து நேரடியாக பெறப்பட்ட உயர்தர விதைகள்.",
       step2Title: "2. இயற்கை வெயில் உலர்த்தல்",
       step2Desc: "விதைகள் இயற்கை சூரிய ஒளியில் தகுந்த ஈரப்பதம் வரும் வரை உலர்த்தப்படுகின்றன.",
       step3Title: "3. மெதுவான மரச்செக்கு ஆட்டுதல்",
@@ -210,7 +208,7 @@ export const translations = {
     },
     wholesale: {
       title: "மொத்த விற்பனை & தானியங்கள்",
-      subtitle: "ஹோட்டல்கள், உணவகங்கள் மற்றும் மொத்த வியாபாரிகளுக்கு மொத்த விலையில் விநியோகம்.",
+      subtitle: "வானூர் உழவர் உற்பத்தியாளர் நிறுவனத்திலிருந்து நேரடியாக ஹோட்டல்கள் மற்றும் கடைகளுக்கு மொத்த விநியோகம்.",
       seedCatalog: "தானியங்கள் பட்டியல்",
       quoteBuilder: "மொத்த விலை கணிப்பான்",
       selectProduct: "பொருளைத் தேர்ந்தெடுக்க:",
@@ -231,7 +229,7 @@ export const translations = {
       subtitle: "பாரம்பரிய மரச்செக்கு மற்றும் சுத்திகரிக்கப்பட்ட (Refined) எண்ணெய் ஒப்பீடு",
       marachekkuVsRefined: "ஒப்பீட்டு அட்டவணை",
       param: "அம்சம்",
-      maraCol: "சிறாழி மரச்செக்கு எண்ணெய்",
+      maraCol: "சீராழி மரச்செக்கு எண்ணெய்",
       refCol: "சுத்திகரிக்கப்பட்ட தொழிற்சாலை எண்ணெய்",
       temp: "வெப்பநிலை",
       tempMara: "குறைந்த வெப்பநிலை (< 45°C)",
@@ -258,7 +256,7 @@ export const translations = {
       applyBtn: "பயன்படுத்து"
     },
     admin: {
-      title: "சிறாழி நிர்வாகி பகுதி",
+      title: "வானூர் FPC நிர்வாகி பகுதி",
       subtitle: "தினசரி ஆர்டர்கள், இருப்பு நிலை மற்றும் மொத்த விற்பனை விசாரணைகள்",
       salesToday: "இன்றைய விற்பனை",
       ordersPending: "நிலுவையில் உள்ளவை",
@@ -273,14 +271,16 @@ export const translations = {
       action: "செயல்"
     },
     footer: {
-      aboutTitle: "சிறாழி பற்றி",
-      aboutDesc: "பாரம்பரிய தென்னிந்திய மரச்செக்கு முறையை மீண்டும் மீட்டெடுக்கும் நோக்கத்துடன் 100% தூய எண்ணெய்களை தயாரித்து வழங்குகிறோம்.",
+      aboutTitle: "வானூர் உழவர் உற்பத்தியாளர் நிறுவனம்",
+      aboutDesc: "வானூர் உழவர் உற்பத்தியாளர் நிறுவனம் (பதிவு: 8 டிசம்பர் 2022, MCA நிலை: Active) சீராழி பிராண்டின் கீழ் 100% தூய மரச்செக்கு எண்ணெய்களை தயாரித்து வழங்குகிறது.",
       quickLinks: "விரைவு இணைப்புகள்",
-      contactTitle: "பண்ணை தொடர்புக்கு",
-      address: "124 விவசாயிகள் சாலை, காங்கேயம் / பொள்ளாச்சி மண்டலம், தமிழ்நாடு - 638701",
+      contactTitle: "பதிவு அலுவலகம் & பண்ணை",
+      address: "எண். 4/165, பாண்டி மெயின் ரோடு, தைலாபுரம் கிராமம், வானூர், விழுப்புரம் மாவட்டம், தமிழ்நாடு - 604102",
       phone: "+91 98420 12345 / +91 94430 67890",
-      email: "care@sirazhi.com",
-      copyright: "© 2026 சிறாழி தயாரிப்பாளர் நிறுவனம். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை."
+      email: "care@siraazhi.com",
+      fssaiTitle: "FSSAI எண்: 12423031000494",
+      fssaiDesc: "மாநில உரிமம் (Active) | விழுப்புரம், தமிழ்நாடு",
+      copyright: "© 2026 வானூர் உழவர் உற்பத்தியாளர் நிறுவனம். அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை."
     }
   }
 };

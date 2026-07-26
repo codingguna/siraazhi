@@ -9,7 +9,7 @@ export default function AdminDashboard({ lang, onCloseAdmin, onToast }) {
   const [orders, setOrders] = useState([
     { id: '#SRZ-1089', customer: 'Venkatesh Babu', city: 'Madurai', items: '1L Coconut Oil x 2, 1L Sesame Oil x 1', total: 1070, status: 'Processing', date: 'Today, 10:30 AM' },
     { id: '#SRZ-1088', customer: 'Revathi Mohan', city: 'Coimbatore', items: '5L Groundnut Oil Can x 1', total: 1350, status: 'Dispatched', date: 'Today, 09:15 AM' },
-    { id: '#SRZ-1087', customer: 'Deepak Raj', city: 'Chennai', items: 'Sirazhi Trio Bundle x 1', total: 850, status: 'Delivered', date: 'Yesterday' },
+    { id: '#SRZ-1087', customer: 'Deepak Raj', city: 'Chennai', items: 'Siraazhi Trio Bundle x 1', total: 850, status: 'Delivered', date: 'Yesterday' },
     { id: '#SRZ-1086', customer: 'Saritha Krishnan', city: 'Salem', items: '1Kg Raw Peanuts x 2', total: 300, status: 'Processing', date: 'Yesterday' }
   ]);
 
@@ -38,7 +38,7 @@ export default function AdminDashboard({ lang, onCloseAdmin, onToast }) {
         <div className="bg-[#1b4332] text-white p-6 rounded-3xl shadow-lg flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="space-y-1">
             <span className="bg-[#d4a017] text-slate-950 text-[10px] font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider">
-              Sirazhi Owner Portal
+              Siraazhi Owner Portal
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold font-heading text-[#faf6ee]">
               {t.title}

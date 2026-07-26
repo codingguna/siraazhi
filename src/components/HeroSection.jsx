@@ -1,12 +1,12 @@
 import React from 'react';
-import { ArrowRight, Sparkles, Droplets, Award, Leaf } from 'lucide-react';
+import { ArrowRight, Sparkles, Droplets, Award } from 'lucide-react';
 import { translations } from '../data/translations';
 
-export default function HeroSection({ lang, onExploreClick, onStoryClick }) {
+export default function HeroSection({ lang, onExploreClick }) {
   const t = translations[lang].hero;
 
   return (
-    <section id="home" className="relative bg-gradient-to-b from-[#faf6ee] via-[#f4eee1] to-[#faf6ee] pt-8 pb-16 md:py-20 overflow-hidden">
+    <section id="home" className="relative bg-[#faf6ee] pt-10 pb-12 overflow-hidden">
       {/* Background Decorative Circles */}
       <div className="absolute top-10 right-10 w-96 h-96 bg-[#d4a017]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 left-10 w-80 h-80 bg-[#2d6a4f]/10 rounded-full blur-3xl pointer-events-none" />
@@ -31,39 +31,29 @@ export default function HeroSection({ lang, onExploreClick, onStoryClick }) {
             <p className="text-lg sm:text-xl text-[#556b62] leading-relaxed max-w-2xl font-normal">
               {t.subtitle}
             </p>
-
             {/* CTAs */}
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            <div className="flex flex-wrap items-center gap-4 pt-4">
               <button 
                 onClick={onExploreClick}
-                className="btn-gold text-base py-3.5 px-7 cursor-pointer"
+                className="btn-gold text-lg py-4 px-8 cursor-pointer shadow-lg hover:scale-105"
               >
                 <span>{t.shopBtn}</span>
                 <ArrowRight className="w-5 h-5" />
               </button>
-
-              <button 
-                onClick={onStoryClick}
-                className="btn-outline text-base py-3.5 px-7 cursor-pointer"
-              >
-                <Leaf className="w-5 h-5 text-[#2d6a4f]" />
-                <span>{t.storyBtn}</span>
-              </button>
             </div>
-
             {/* Stats Row */}
-            <div className="grid grid-cols-3 gap-4 pt-6 border-t border-[#e6dfcf] max-w-xl">
-              <div className="bg-white/80 p-3.5 rounded-xl border border-[#e6dfcf] shadow-sm">
-                <p className="text-2xl sm:text-3xl font-extrabold text-[#1b4332] font-heading">{t.stat1Val}</p>
-                <p className="text-xs text-[#556b62] font-medium mt-0.5">{t.stat1Label}</p>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-6 max-w-2xl mt-2">
+              <div className="bg-white/90 p-4 rounded-2xl border border-[#e6dfcf] shadow-md hover-lift flex flex-col items-center">
+                <p className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#1b4332] font-heading">{t.stat1Val}</p>
+                <p className="text-xs sm:text-sm text-[#556b62] font-semibold mt-1 leading-tight">{t.stat1Label}</p>
               </div>
-              <div className="bg-white/80 p-3.5 rounded-xl border border-[#e6dfcf] shadow-sm">
-                <p className="text-2xl sm:text-3xl font-extrabold text-[#d4a017] font-heading">{t.stat2Val}</p>
-                <p className="text-xs text-[#556b62] font-medium mt-0.5">{t.stat2Label}</p>
+              <div className="bg-white/90 p-4 rounded-2xl border border-[#e6dfcf] shadow-md hover-lift flex flex-col items-center">
+                <p className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#d4a017] font-heading">{t.stat2Val}</p>
+                <p className="text-xs sm:text-sm text-[#556b62] font-semibold mt-1 leading-tight">{t.stat2Label}</p>
               </div>
-              <div className="bg-white/80 p-3.5 rounded-xl border border-[#e6dfcf] shadow-sm">
-                <p className="text-2xl sm:text-3xl font-extrabold text-[#2d6a4f] font-heading">{t.stat3Val}</p>
-                <p className="text-xs text-[#556b62] font-medium mt-0.5">{t.stat3Label}</p>
+              <div className="bg-white/90 p-4 rounded-2xl border border-[#e6dfcf] shadow-md hover-lift flex flex-col items-center">
+                <p className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#2d6a4f] font-heading">{t.stat3Val}</p>
+                <p className="text-xs sm:text-sm text-[#556b62] font-semibold mt-1 leading-tight">{t.stat3Label}</p>
               </div>
             </div>
           </div>
@@ -75,7 +65,7 @@ export default function HeroSection({ lang, onExploreClick, onStoryClick }) {
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white bg-gradient-to-br from-[#1b4332] to-[#2d6a4f] p-2">
                 <img 
                   src="/assets/hero_oil.png" 
-                  alt="Sirazhi Cold Pressed Oils" 
+                  alt="Siraazhi Marachekku Oils" 
                   className="w-full h-[420px] object-cover rounded-2xl hover:scale-105 transition-transform duration-700"
                 />
                 

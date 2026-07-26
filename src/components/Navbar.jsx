@@ -27,20 +27,21 @@ export default function Navbar({
   const navLinks = [
     { id: 'home', label: t.nav.home },
     { id: 'products', label: t.nav.products },
-    { id: 'story', label: t.nav.story },
     { id: 'process', label: t.nav.process },
     { id: 'benefits', label: t.nav.benefits },
-    { id: 'recipes', label: t.nav.recipes },
-    { id: 'wholesale', label: t.nav.wholesale }
+    { id: 'recipes', label: t.nav.recipes }
   ];
 
   const handleNavClick = (id) => {
     setActiveSection(id);
     setMobileMenuOpen(false);
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 150);
   };
 
   return (
@@ -50,7 +51,7 @@ export default function Navbar({
         <div className="container-custom flex flex-col sm:flex-row justify-between items-center gap-2">
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1.5 font-medium text-[#f4c430]">
-              <ShieldCheck className="w-4 h-4" /> FSSAI Lic #12424999000123
+              <ShieldCheck className="w-4 h-4" /> FSSAI Lic #12423031000494
             </span>
             <span className="hidden md:inline text-emerald-200/60">|</span>
             <span className="hidden md:inline text-emerald-100 font-normal">
@@ -77,8 +78,8 @@ export default function Navbar({
       {/* Main Navbar */}
       <nav className={`w-full transition-all duration-300 ${
         scrolled 
-          ? 'bg-white shadow-md py-3' 
-          : 'bg-[#faf6ee] py-4'
+          ? 'bg-white shadow-md py-4' 
+          : 'bg-[#faf6ee] py-5'
       }`}>
         <div className="container-custom flex items-center justify-between">
           {/* Logo */}
@@ -88,16 +89,16 @@ export default function Navbar({
           >
             <img 
               src="/assets/sirazhi_logo.png" 
-              alt="Sirazhi Logo" 
+              alt="Siraazhi Logo" 
               className="h-12 w-auto object-contain group-hover:scale-105 transition-transform"
             />
             <div>
               <div className="flex items-baseline gap-2">
                 <span className="font-heading font-extrabold text-2xl tracking-wider text-[#1b4332]">
-                  {t.brandName}
+                  Siraazhi
                 </span>
                 <span className="text-xs font-bold px-1.5 py-0.5 rounded bg-[#d8f3dc] text-[#1b4332]">
-                  சிறாழி
+                  சீராழி
                 </span>
               </div>
               <p className="text-[11px] font-medium text-[#556b62] hidden sm:block">
@@ -107,7 +108,7 @@ export default function Navbar({
           </button>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden lg:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <button
                 key={link.id}

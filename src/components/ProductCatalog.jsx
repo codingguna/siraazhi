@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ShoppingBag, Eye, Star, Flame, Check, X, Droplet } from 'lucide-react';
+import { ShoppingBag, Eye, Check, X, Droplet } from 'lucide-react';
 import { productsData } from '../data/products';
 import { translations } from '../data/translations';
 
@@ -11,9 +11,7 @@ export default function ProductCatalog({ lang, onAddToCart, _onQuickView }) {
 
   const categories = [
     { id: 'all', label: t.all },
-    { id: 'oils', label: t.oils },
-    { id: 'seeds', label: t.seeds },
-    { id: 'packs', label: t.packs }
+    { id: 'oils', label: t.oils }
   ];
 
   const filteredProducts = activeCategory === 'all' 
@@ -45,7 +43,7 @@ export default function ProductCatalog({ lang, onAddToCart, _onQuickView }) {
   };
 
   return (
-    <section id="products" className="py-16 md:py-24 bg-[#faf6ee]">
+    <section id="products" className="py-10 md:py-12 bg-[#faf6ee]">
       <div className="container-custom">
         
         {/* Section Header */}
@@ -66,9 +64,10 @@ export default function ProductCatalog({ lang, onAddToCart, _onQuickView }) {
                 onClick={() => setActiveCategory(cat.id)}
                 className={`px-5 py-2.5 rounded-full text-sm font-extrabold transition-all cursor-pointer ${
                   activeCategory === cat.id
-                    ? 'bg-[#1b4332] text-[#f4c430] shadow-md scale-105'
+                    ? 'text-white shadow-md scale-105 border-transparent'
                     : 'bg-white text-[#556b62] border border-[#e6dfcf] hover:border-[#1b4332] hover:text-[#1b4332]'
                 }`}
+                style={{ backgroundColor: activeCategory === cat.id ? '#1b4332' : undefined }}
               >
                 {cat.label}
               </button>
@@ -87,22 +86,14 @@ export default function ProductCatalog({ lang, onAddToCart, _onQuickView }) {
                 key={product.id}
                 className="bg-white rounded-3xl overflow-hidden border border-[#e6dfcf] hover-lift flex flex-col justify-between shadow-sm relative group"
               >
-                {/* Badge Top Left */}
-                {product.badge && (
-                  <div className="absolute top-4 left-4 z-10">
-                    <span className="badge-gold shadow-sm font-extrabold px-3 py-1">
-                      {product.badge}
-                    </span>
-                  </div>
-                )}
 
                 {/* Quick View Button Overlay */}
                 <button
                   onClick={() => setQuickViewProduct(product)}
-                  className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-white/90 text-[#1b4332] hover:bg-[#1b4332] hover:text-white transition-all shadow-md flex items-center justify-center cursor-pointer"
-                  title={t.quickView}
+                  className="absolute top-4 right-4 z-10 w-9 h-9 rounded-full transition-all shadow-md flex items-center justify-center cursor-pointer hover:scale-110"
+                  style={{ backgroundColor: '#1b4332', color: 'white' }}
                 >
-                  <Eye className="w-4 h-4" />
+                  <Eye className="w-4 h-4 " />
                 </button>
 
                 {/* Product Image */}
@@ -112,25 +103,13 @@ export default function ProductCatalog({ lang, onAddToCart, _onQuickView }) {
                     alt={name} 
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  {/* Smoke point chip if available */}
-                  {product.smokePoint !== "N/A" && (
-                    <div className="absolute bottom-3 left-3 bg-black/70 backdrop-blur-md text-amber-200 text-[11px] font-semibold px-2.5 py-1 rounded-full flex items-center gap-1">
-                      <Flame className="w-3 h-3 text-[#f4c430]" />
-                      <span>Smoke Point: {product.smokePoint}</span>
-                    </div>
-                  )}
                 </div>
 
                 {/* Card Content */}
                 <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
                   <div>
-                    {/* Rating & Stock */}
-                    <div className="flex items-center justify-between text-xs text-[#556b62] mb-1">
-                      <div className="flex items-center gap-1 text-amber-500 font-bold">
-                        <Star className="w-4 h-4 fill-amber-400 text-amber-400" />
-                        <span>{product.rating}</span>
-                        <span className="text-gray-400">({product.reviewCount})</span>
-                      </div>
+                    {/* Stock Status */}
+                    <div className="flex items-center justify-end text-xs text-[#556b62] mb-1">
                       <span className="text-emerald-700 font-extrabold flex items-center gap-1">
                         <Check className="w-3.5 h-3.5" /> {t.inStock}
                       </span>
@@ -159,14 +138,18 @@ export default function ProductCatalog({ lang, onAddToCart, _onQuickView }) {
                           <button
                             key={vIdx}
                             onClick={() => handleVariantChange(product.id, vIdx)}
-                            className={`py-1.5 px-2 rounded-xl text-xs font-bold transition-all border text-center ${
+                            className={`py-2 px-1.5 rounded-xl text-xs font-bold transition-all border text-center cursor-pointer ${
                               isSelected
-                                ? 'bg-[#1b4332] text-white border-[#1b4332] shadow-sm'
+                                ? 'text-white shadow-xs'
                                 : 'bg-[#faf6ee] text-[#1b4332] border-[#e6dfcf] hover:border-[#1b4332]'
                             }`}
+                            style={{ 
+                              backgroundColor: isSelected ? '#1b4332' : undefined,
+                              borderColor: isSelected ? '#1b4332' : undefined
+                            }}
                           >
-                            <div>{variant.size}</div>
-                            <div className={isSelected ? 'text-[#f4c430]' : 'text-[#d4a017]'}>
+                            <div className="text-[11px] leading-tight font-medium">{variant.size}</div>
+                            <div className={`text-xs font-extrabold mt-0.5 ${isSelected ? 'text-amber-300' : 'text-[#d4a017]'}`}>
                               ₹{variant.price}
                             </div>
                           </button>
@@ -230,7 +213,7 @@ export default function ProductCatalog({ lang, onAddToCart, _onQuickView }) {
               </div>
 
               <div className="p-6 md:p-8 space-y-4 text-left">
-                <span className="badge-gold">Sirazhi Certified</span>
+                <span className="badge-gold">Siraazhi Certified</span>
                 <h3 className="text-2xl font-bold text-[#1b4332] font-heading">
                   {lang === 'en' ? quickViewProduct.nameEn : quickViewProduct.nameTa}
                 </h3>

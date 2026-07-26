@@ -45,12 +45,12 @@ export default function TrustBadges({ lang }) {
   ];
 
   return (
-    <section className="py-12 bg-white border-y border-[#e6dfcf]">
-      <div className="container-custom">
-        <div className="text-center mb-8">
+    <section className="py-10 bg-[#faf6ee]">
+      <div className="container-custom gap-6">
+        <div className="text-center pb-10">
           <span className="badge-gold">Purity Guarantee</span>
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1b4332] mt-2 font-heading">
-            {lang === 'en' ? 'Why Families Trust Sirazhi' : 'ஏன் சிறாழி பிராண்ட் நம்பிக்கையானது?'}
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1b4332] mt-4 font-heading ">
+            {lang === 'en' ? 'Why Families Trust Siraazhi' : 'ஏன் சீராழி பிராண்ட் நம்பிக்கையானது?'}
           </h2>
         </div>
 

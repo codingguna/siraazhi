@@ -7,8 +7,6 @@ import ProductCatalog from './components/ProductCatalog';
 import ProcessVisualizer from './components/ProcessVisualizer';
 import HealthBenefits from './components/HealthBenefits';
 import RecipesSection from './components/RecipesSection';
-import WholesalePortal from './components/WholesalePortal';
-import CustomerReviews from './components/CustomerReviews';
 import CartDrawer from './components/CartDrawer';
 import AdminDashboard from './components/AdminDashboard';
 import Footer from './components/Footer';
@@ -19,17 +17,8 @@ export default function App() {
   const [isAdmin, setIsAdmin] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   
-  // Shopping Cart state with initial starter item
-  const [cartItems, setCartItems] = useState([
-    {
-      productId: 'coconut-oil',
-      name: 'Traditional Coconut Oil (தேங்காய் எண்ணெய்)',
-      image: '/assets/coconut_oil.png',
-      size: '1 Litre',
-      price: 330,
-      quantity: 1
-    }
-  ]);
+  // Shopping Cart state
+  const [cartItems, setCartItems] = useState([]);
 
   // Toast notification state
   const [toast, setToast] = useState(null);
@@ -137,7 +126,6 @@ export default function App() {
           <HeroSection 
             lang={lang}
             onExploreClick={() => handleSectionNavigate('products')}
-            onStoryClick={() => handleSectionNavigate('process')}
           />
 
           <TrustBadges lang={lang} />
@@ -152,16 +140,6 @@ export default function App() {
           <HealthBenefits lang={lang} />
 
           <RecipesSection lang={lang} />
-
-          <WholesalePortal 
-            lang={lang}
-            onToast={showToast}
-          />
-
-          <CustomerReviews 
-            lang={lang}
-            onToast={showToast}
-          />
         </main>
       )}
 

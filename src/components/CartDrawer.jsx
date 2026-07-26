@@ -55,7 +55,7 @@ export default function CartDrawer({
       return;
     }
     setOrderPlaced(true);
-    onToast(lang === 'en' ? 'Order Confirmed! Thank you for ordering from Sirazhi.' : 'ஆர்டர் உறுதி செய்யப்பட்டது! நன்றி.', 'success');
+    onToast(lang === 'en' ? 'Order Confirmed! Thank you for ordering from Siraazhi.' : 'ஆர்டர் உறுதி செய்யப்பட்டது! நன்றி.', 'success');
   };
 
   if (!isOpen) return null;

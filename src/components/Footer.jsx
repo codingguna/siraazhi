@@ -10,7 +10,7 @@ export default function Footer({ lang, onNavigate }) {
   };
 
   return (
-    <footer className="bg-[#1b4332] text-[#faf6ee] pt-16 pb-8 border-t-4 border-[#d4a017]">
+    <footer className="bg-[#1b4332] text-[#faf6ee] pt-10 pb-6 border-t-4 border-[#d4a017]">
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-emerald-800/80 text-left">
           
@@ -19,15 +19,15 @@ export default function Footer({ lang, onNavigate }) {
             <div className="flex items-center gap-3">
               <img 
                 src="/assets/sirazhi_logo.png" 
-                alt="Sirazhi Logo" 
+                alt="Siraazhi Logo" 
                 className="h-12 w-auto object-contain bg-white/90 p-1 rounded-xl shadow-md"
               />
               <div>
                 <span className="font-heading font-extrabold text-2xl tracking-wider text-white">
-                  Sirazhi (சிறாழி)
+                  Siraazhi (சீராழி)
                 </span>
                 <p className="text-xs text-amber-300 font-semibold">
-                  Traditional Cold Pressed Oils & Seeds
+                  Traditional Marachekku Oils & Seeds
                 </p>
               </div>
             </div>
@@ -85,7 +85,7 @@ export default function Footer({ lang, onNavigate }) {
               <li className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-[#f4c430] shrink-0 mt-0.5" />
                 <a 
-                  href="https://maps.google.com" 
+                  href="https://goo.gl/maps/rb6LhEdFFpsp5Ap96?g_st=aw" 
                   target="_blank" 
                   rel="noreferrer"
                   className="hover:text-[#f4c430] transition-colors underline"
@@ -93,7 +93,14 @@ export default function Footer({ lang, onNavigate }) {
                   {t.address}
                 </a>
               </li>
-              <li className="flex items-center gap-2">
+              <li className="flex items-start gap-2 pt-2 mt-2 border-t border-emerald-700/60">
+                <ShieldCheck className="w-4 h-4 text-[#f4c430] shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-bold text-white">{t.fssaiTitle}</p>
+                  <p className="text-[10px] text-emerald-200/80">{t.fssaiDesc}</p>
+                </div>
+              </li>
+              <li className="flex items-center gap-2 pt-1">
                 <Phone className="w-4 h-4 text-[#f4c430] shrink-0" />
                 <span>{t.phone}</span>
               </li>
