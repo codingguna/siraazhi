@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ShoppingBag, TrendingUp, Package, Users, ShieldAlert, CheckCircle, Clock, Search, X, Edit, Eye } from 'lucide-react';
+import { ShoppingBag, TrendingUp, Package, Clock, X } from 'lucide-react';
 import { translations } from '../data/translations';
 
 export default function AdminDashboard({ lang, onCloseAdmin, onToast }) {
@@ -13,7 +13,7 @@ export default function AdminDashboard({ lang, onCloseAdmin, onToast }) {
     { id: '#SRZ-1086', customer: 'Saritha Krishnan', city: 'Salem', items: '1Kg Raw Peanuts x 2', total: 300, status: 'Processing', date: 'Yesterday' }
   ]);
 
-  const [leads, setLeads] = useState([
+  const [leads] = useState([
     { id: 'LD-401', company: 'Kongu Hotels Pvt Ltd', contact: '+91 98421 88990', item: 'Bulk Groundnut Oil (Tin)', quantity: '500 Kg', status: 'New Quote Requested' },
     { id: 'LD-402', company: 'Aachi Foods Distributor', contact: '+91 94432 11009', item: 'Sun Dried Coconut Copra', quantity: '2,000 Kg', status: 'Sample Sent' },
     { id: 'LD-403', company: 'Natural Organic Mart', contact: '+91 97890 55432', item: 'Black Sesame Seeds', quantity: '250 Kg', status: 'Negotiating' }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Phone, Mail, ShieldCheck, Heart, ArrowUp } from 'lucide-react';
+import { MapPin, Phone, Mail, ShieldCheck, ArrowUp } from 'lucide-react';
 import { translations } from '../data/translations';
 
 export default function Footer({ lang, onNavigate }) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Check, X, ShieldAlert, Heart, Flame, Sparkles } from 'lucide-react';
+import { Check, X, Heart, Flame, Sparkles } from 'lucide-react';
 import { translations } from '../data/translations';
 
 export default function HealthBenefits({ lang }) {

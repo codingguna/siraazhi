@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, ShoppingBag, Trash2, Plus, Minus, Tag, ArrowRight, ShieldCheck, CheckCircle2, Truck, CreditCard, Sparkles } from 'lucide-react';
+import { X, ShoppingBag, Trash2, Plus, Minus, Tag, ArrowRight, CheckCircle2, Truck } from 'lucide-react';
 import { translations } from '../data/translations';
 
 export default function CartDrawer({ 
@@ -22,7 +22,7 @@ export default function CartDrawer({
   const [customerName, setCustomerName] = useState('');
   const [phone, setPhone] = useState('');
   const [address, setAddress] = useState('');
-  const [city, setCity] = useState('');
+  const [city] = useState('');
   const [pincode, setPincode] = useState('');
   const [paymentMethod, setPaymentMethod] = useState('upi');
   const [orderPlaced, setOrderPlaced] = useState(false);

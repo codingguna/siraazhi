@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Sparkles, Droplets, HeartPulse, Award, Flame, Leaf } from 'lucide-react';
+import { ArrowRight, Sparkles, Droplets, Award, Leaf } from 'lucide-react';
 import { translations } from '../data/translations';
 
 export default function HeroSection({ lang, onExploreClick, onStoryClick }) {

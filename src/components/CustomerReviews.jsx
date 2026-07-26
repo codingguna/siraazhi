@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Star, Quote, CheckCircle2, ThumbsUp, Plus, X } from 'lucide-react';
-import { translations } from '../data/translations';
+import { Star, Quote, CheckCircle2, Plus, X } from 'lucide-react';
 
 export default function CustomerReviews({ lang, onToast }) {
   const [reviews, setReviews] = useState([

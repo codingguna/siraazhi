@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calculator, Truck, Package, Send, CheckCircle, FileText, Building, Phone, Mail } from 'lucide-react';
+import { Calculator, Send, CheckCircle, FileText } from 'lucide-react';
 import { translations } from '../data/translations';
 
 export default function WholesalePortal({ lang, onToast }) {

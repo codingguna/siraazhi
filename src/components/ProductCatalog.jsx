@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { ShoppingBag, Eye, Star, Flame, Shield, Check, X, Sparkles, Droplet } from 'lucide-react';
+import { ShoppingBag, Eye, Star, Flame, Check, X, Droplet } from 'lucide-react';
 import { productsData } from '../data/products';
 import { translations } from '../data/translations';
 
-export default function ProductCatalog({ lang, onAddToCart, onQuickView }) {
+export default function ProductCatalog({ lang, onAddToCart, _onQuickView }) {
   const t = translations[lang].products;
   const [activeCategory, setActiveCategory] = useState('all');
   const [selectedVariants, setSelectedVariants] = useState({});
@@ -81,8 +81,6 @@ export default function ProductCatalog({ lang, onAddToCart, onQuickView }) {
           {filteredProducts.map((product) => {
             const currentVariant = getSelectedVariant(product);
             const name = lang === 'en' ? product.nameEn : product.nameTa;
-            const description = lang === 'en' ? product.descriptionEn : product.descriptionTa;
-            const bestFor = lang === 'en' ? product.bestForEn : product.bestForTa;
 
             return (
               <div 

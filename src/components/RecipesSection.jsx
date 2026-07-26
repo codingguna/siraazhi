@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Utensils, Clock, Flame, BookOpen, ChevronDown, ChevronUp } from 'lucide-react';
+import { Utensils, BookOpen, ChevronDown, ChevronUp } from 'lucide-react';
 
 export default function RecipesSection({ lang }) {
   const [expandedRecipe, setExpandedRecipe] = useState(0);

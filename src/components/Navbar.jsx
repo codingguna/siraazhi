@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ShoppingBag, Globe, ShieldCheck, Menu, X, PhoneCall, Award, UserCheck } from 'lucide-react';
+import { ShoppingBag, Globe, ShieldCheck, Menu, X, PhoneCall, UserCheck } from 'lucide-react';
 import { translations } from '../data/translations';
 
 export default function Navbar({ 
