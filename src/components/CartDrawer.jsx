@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, ShoppingBag, Trash2, Plus, Minus, Tag, ArrowRight, CheckCircle2, Truck } from 'lucide-react';
+import { X, ShoppingBag, Trash2, Plus, Minus, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { translations } from '../data/translations';
 
 export default function CartDrawer({ 

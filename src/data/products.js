@@ -10,6 +10,7 @@ export const productsData = [
     descriptionTa: 'வானூர் உழவர் உற்பத்தியாளர் நிறுவனம் தயாரித்த 100% தூய மரச்செக்கு தேங்காய் எண்ணெய்.',
     image: '/assets/coconut_oil.png',
     variants: [
+      { size: '250ml', price: 100, originalPrice: 110 },
       { size: '1 Litre', price: 440, originalPrice: 480 }
     ],
     nutrition: {
@@ -33,6 +34,7 @@ export const productsData = [
     descriptionTa: 'கருப்பு எள்ளில் இருந்து பாரம்பரிய மரச்செக்கில் பெறப்பட்ட சத்துமிக்க நல்லெண்ணெய்.',
     image: '/assets/gingelly_oil.png',
     variants: [
+      { size: '250ml', price: 100, originalPrice: 110 },
       { size: '0.5 Litre (500ml)', price: 200, originalPrice: 220 },
       { size: '1 Litre', price: 420, originalPrice: 450 }
     ],
@@ -57,7 +59,8 @@ export const productsData = [
     descriptionTa: 'பாரம்பரிய முறையில் வாகை மரச்செக்கில் ஆட்டப்பட்ட மணமிக்க கடலை எண்ணெய்.',
     image: '/assets/groundnut_oil.png',
     variants: [
-      { size: '1 Litre', price: 260, originalPrice: 290 }
+      { size: '1 Litre', price: 260, originalPrice: 290 },
+      { size: '5 Litre', price: 1300, originalPrice: 1450 }
     ],
     nutrition: {
       energy: '899.72 Kcal',
@@ -80,7 +83,8 @@ export const productsData = [
     descriptionTa: 'தினசரி குடும்ப சமையலுக்கு ஏற்ற சுத்தமான கடலை எண்ணெய்.',
     image: '/assets/chekku_groundnut_oil.png',
     variants: [
-      { size: '1 Litre', price: 230, originalPrice: 250 }
+      { size: '1 Litre', price: 230, originalPrice: 250 },
+      { size: '5 Litre', price: 1150, originalPrice: 1250 }
     ],
     nutrition: {
       energy: '899.72 Kcal',

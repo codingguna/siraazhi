@@ -1,32 +1,44 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ShoppingBag, TrendingUp, Package, Clock, X } from 'lucide-react';
 import { translations } from '../data/translations';
+import ProductManager from './ProductManager';
+import { database } from '../firebase';
+import { ref, onValue, set } from 'firebase/database';
 
 export default function AdminDashboard({ lang, onCloseAdmin, onToast }) {
   const t = translations[lang].admin;
   const [activeTab, setActiveTab] = useState('orders');
 
-  const [orders, setOrders] = useState([
-    { id: '#SRZ-1089', customer: 'Venkatesh Babu', city: 'Madurai', items: '1L Coconut Oil x 2, 1L Sesame Oil x 1', total: 1070, status: 'Processing', date: 'Today, 10:30 AM' },
-    { id: '#SRZ-1088', customer: 'Revathi Mohan', city: 'Coimbatore', items: '5L Groundnut Oil Can x 1', total: 1350, status: 'Dispatched', date: 'Today, 09:15 AM' },
-    { id: '#SRZ-1087', customer: 'Deepak Raj', city: 'Chennai', items: 'Siraazhi Trio Bundle x 1', total: 850, status: 'Delivered', date: 'Yesterday' },
-    { id: '#SRZ-1086', customer: 'Saritha Krishnan', city: 'Salem', items: '1Kg Raw Peanuts x 2', total: 300, status: 'Processing', date: 'Yesterday' }
-  ]);
+  const [orders, setOrders] = useState([]);
 
-  const [leads] = useState([
-    { id: 'LD-401', company: 'Kongu Hotels Pvt Ltd', contact: '+91 98421 88990', item: 'Bulk Groundnut Oil (Tin)', quantity: '500 Kg', status: 'New Quote Requested' },
-    { id: 'LD-402', company: 'Aachi Foods Distributor', contact: '+91 94432 11009', item: 'Sun Dried Coconut Copra', quantity: '2,000 Kg', status: 'Sample Sent' },
-    { id: 'LD-403', company: 'Natural Organic Mart', contact: '+91 97890 55432', item: 'Black Sesame Seeds', quantity: '250 Kg', status: 'Negotiating' }
-  ]);
+  useEffect(() => {
+    const ordersRef = ref(database, 'orders');
+
+    const unsubOrders = onValue(ordersRef, (snapshot) => {
+      if (snapshot.exists()) {
+        const data = snapshot.val();
+        setOrders(Array.isArray(data) ? data : Object.values(data));
+      } else {
+        setOrders([]);
+      }
+    });
+
+    return () => unsubOrders();
+  }, []);
+
+  const salesToday = orders.reduce((sum, o) => sum + (Number(o.total) || 0), 0);
+  const pendingOrders = orders.filter(o => o.status === 'Processing').length;
 
   const handleUpdateOrderStatus = (orderId) => {
-    setOrders(prev => prev.map(o => {
+    const updatedOrders = orders.map(o => {
       if (o.id === orderId) {
         const nextStatus = o.status === 'Processing' ? 'Dispatched' : o.status === 'Dispatched' ? 'Delivered' : 'Processing';
         return { ...o, status: nextStatus };
       }
       return o;
-    }));
+    });
+    setOrders(updatedOrders);
+    set(ref(database, 'orders'), updatedOrders).catch(err => console.error("Failed to update order status", err));
     onToast(lang === 'en' ? `Order ${orderId} Status Updated!` : `ஆர்டர் நிலை புதுப்பிக்கப்பட்டது!`, 'success');
   };
 
@@ -65,8 +77,8 @@ export default function AdminDashboard({ lang, onCloseAdmin, onToast }) {
             </div>
             <div>
               <p className="text-xs text-gray-500 font-medium">{t.salesToday}</p>
-              <p className="text-2xl font-extrabold text-[#1b4332] font-heading">₹42,850</p>
-              <p className="text-[10px] text-emerald-700 font-bold">+18% vs yesterday</p>
+              <p className="text-2xl font-extrabold text-[#1b4332] font-heading">₹{salesToday}</p>
+              <p className="text-[10px] text-emerald-700 font-bold">Total Revenue</p>
             </div>
           </div>
 
@@ -76,7 +88,7 @@ export default function AdminDashboard({ lang, onCloseAdmin, onToast }) {
             </div>
             <div>
               <p className="text-xs text-gray-500 font-medium">{t.ordersPending}</p>
-              <p className="text-2xl font-extrabold text-[#1b4332] font-heading">14 Orders</p>
+              <p className="text-2xl font-extrabold text-[#1b4332] font-heading">{pendingOrders} Orders</p>
               <p className="text-[10px] text-amber-700 font-bold">Requires packing</p>
             </div>
           </div>
@@ -87,7 +99,7 @@ export default function AdminDashboard({ lang, onCloseAdmin, onToast }) {
             </div>
             <div>
               <p className="text-xs text-gray-500 font-medium">{t.seedStock}</p>
-              <p className="text-2xl font-extrabold text-[#1b4332] font-heading">4.2 Tons</p>
+              <p className="text-2xl font-extrabold text-[#1b4332] font-heading">0 Tons</p>
               <p className="text-[10px] text-[#2d6a4f] font-bold">Copra & Peanuts</p>
             </div>
           </div>
@@ -98,8 +110,8 @@ export default function AdminDashboard({ lang, onCloseAdmin, onToast }) {
             </div>
             <div>
               <p className="text-xs text-gray-500 font-medium">{t.oilStock}</p>
-              <p className="text-2xl font-extrabold text-[#1b4332] font-heading">1,850 Litres</p>
-              <p className="text-[10px] text-emerald-700 font-bold">Settling Tanks Ok</p>
+              <p className="text-2xl font-extrabold text-[#1b4332] font-heading">0 Litres</p>
+              <p className="text-[10px] text-emerald-700 font-bold">Settling Tanks</p>
             </div>
           </div>
         </div>
@@ -117,20 +129,23 @@ export default function AdminDashboard({ lang, onCloseAdmin, onToast }) {
             {t.recentOrders} (4)
           </button>
           <button
-            onClick={() => setActiveTab('wholesale')}
+            onClick={() => setActiveTab('products')}
             className={`px-5 py-2.5 rounded-xl text-xs font-extrabold transition-all cursor-pointer ${
-              activeTab === 'wholesale'
+              activeTab === 'products'
                 ? 'bg-[#1b4332] text-white shadow-sm'
                 : 'bg-white text-gray-600 border border-[#e6dfcf]'
             }`}
           >
-            {t.wholesaleLeads} (3)
+            Manage Products
           </button>
         </div>
 
         {/* Table View */}
-        <div className="bg-white rounded-3xl border border-[#e6dfcf] p-6 shadow-sm overflow-x-auto text-left">
-          {activeTab === 'orders' && (
+        {activeTab === 'products' ? (
+          <ProductManager lang={lang} />
+        ) : (
+          <div className="bg-white rounded-3xl border border-[#e6dfcf] p-6 shadow-sm overflow-x-auto text-left">
+            {activeTab === 'orders' && (
             <table className="w-full text-xs">
               <thead>
                 <tr className="border-b border-gray-200 text-gray-400 font-extrabold uppercase">
@@ -165,7 +180,7 @@ export default function AdminDashboard({ lang, onCloseAdmin, onToast }) {
                     <td className="py-4 px-4 text-right">
                       <button
                         onClick={() => handleUpdateOrderStatus(ord.id)}
-                        className="px-3 py-1 bg-emerald-50 hover:bg-emerald-100 text-[#1b4332] border border-emerald-300 rounded-lg text-[11px] font-bold"
+                        className="px-3 py-1 bg-[#1b4332] text-white shadow-sm rounded-lg text-[11px] font-bold"
                       >
                         Advance Status
                       </button>
@@ -175,50 +190,8 @@ export default function AdminDashboard({ lang, onCloseAdmin, onToast }) {
               </tbody>
             </table>
           )}
-
-          {activeTab === 'wholesale' && (
-            <table className="w-full text-xs">
-              <thead>
-                <tr className="border-b border-gray-200 text-gray-400 font-extrabold uppercase">
-                  <th className="py-3 px-4">Lead ID</th>
-                  <th className="py-3 px-4">Company / Client</th>
-                  <th className="py-3 px-4">Requested Item</th>
-                  <th className="py-3 px-4">Quantity</th>
-                  <th className="py-3 px-4">Status</th>
-                  <th className="py-3 px-4 text-right">Action</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-100 font-medium">
-                {leads.map((ld) => (
-                  <tr key={ld.id} className="hover:bg-[#faf6ee]/50">
-                    <td className="py-4 px-4 font-bold text-[#1b4332]">{ld.id}</td>
-                    <td className="py-4 px-4 font-bold">
-                      {ld.company} <br />
-                      <span className="text-gray-400 font-normal text-[11px]">{ld.contact}</span>
-                    </td>
-                    <td className="py-4 px-4 text-gray-600">{ld.item}</td>
-                    <td className="py-4 px-4 font-bold text-[#1b4332]">{ld.quantity}</td>
-                    <td className="py-4 px-4">
-                      <span className="bg-amber-100 text-amber-900 px-2.5 py-1 rounded-full text-[10px] font-bold">
-                        {ld.status}
-                      </span>
-                    </td>
-                    <td className="py-4 px-4 text-right">
-                      <a
-                        href={`https://wa.me/${ld.contact.replace(/[^0-9]/g, '')}`}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="px-3 py-1 bg-emerald-600 text-white rounded-lg text-[11px] font-bold inline-block"
-                      >
-                        WhatsApp Sales
-                      </a>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          )}
         </div>
+        )}
 
       </div>
     </div>

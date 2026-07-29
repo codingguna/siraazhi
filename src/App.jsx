@@ -14,7 +14,7 @@ import Footer from './components/Footer';
 export default function App() {
   const [lang, setLang] = useState('en');
   const [activeSection, setActiveSection] = useState('home');
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [isAdmin] = useState(window.location.pathname.toLowerCase() === '/admindashboard');
   const [isCartOpen, setIsCartOpen] = useState(false);
   
   // Shopping Cart state
@@ -109,7 +109,6 @@ export default function App() {
         cartCount={cartCount}
         onOpenCart={() => setIsCartOpen(true)}
         isAdmin={isAdmin}
-        setIsAdmin={setIsAdmin}
         activeSection={activeSection}
         setActiveSection={setActiveSection}
       />
@@ -118,7 +117,7 @@ export default function App() {
       {isAdmin ? (
         <AdminDashboard 
           lang={lang}
-          onCloseAdmin={() => setIsAdmin(false)}
+          onCloseAdmin={() => { window.location.href = '/'; }}
           onToast={showToast}
         />
       ) : (

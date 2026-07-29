@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ShoppingBag, Globe, Menu, X, UserCheck } from 'lucide-react';
+import { ShoppingBag, Globe, Menu, X } from 'lucide-react';
 import { translations } from '../data/translations';
 
 export default function Navbar({ 
@@ -7,8 +7,6 @@ export default function Navbar({
   setLang, 
   cartCount, 
   onOpenCart, 
-  isAdmin, 
-  setIsAdmin,
   activeSection,
   setActiveSection
 }) {
@@ -112,19 +110,6 @@ export default function Navbar({
               <span>{lang === 'en' ? 'தமிழ்' : 'English'}</span>
             </button>
 
-            {/* Admin Toggle */}
-            <button
-              onClick={() => setIsAdmin(!isAdmin)}
-              className={`hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold transition-all ${
-                isAdmin 
-                  ? 'bg-amber-500 text-slate-950 shadow-md ring-2 ring-amber-300' 
-                  : 'bg-emerald-100 text-[#1b4332] hover:bg-emerald-200'
-              }`}
-            >
-              <UserCheck className="w-3.5 h-3.5" />
-              <span>{isAdmin ? 'Admin Active' : t.nav.admin}</span>
-            </button>
-
             {/* Shopping Cart Drawer Trigger */}
             <button
               onClick={onOpenCart}
@@ -173,17 +158,6 @@ export default function Navbar({
               >
                 <Globe className="w-4 h-4" />
                 <span>{lang === 'en' ? 'Switch to தமிழ் (Tamil)' : 'ஆங்கிலத்திற்கு மாறு (English)'}</span>
-              </button>
-
-              <button
-                onClick={() => {
-                  setIsAdmin(!isAdmin);
-                  setMobileMenuOpen(false);
-                }}
-                className="flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-100 text-[#1b4332] font-bold text-sm"
-              >
-                <UserCheck className="w-4 h-4" />
-                <span>{isAdmin ? 'Exit Admin Mode' : t.nav.admin}</span>
               </button>
             </div>
           </div>

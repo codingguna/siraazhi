@@ -1,13 +1,49 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ShoppingBag, Eye, Check, X, Droplet } from 'lucide-react';
-import { productsData } from '../data/products';
 import { translations } from '../data/translations';
+import { database } from '../firebase';
+import { ref, onValue } from 'firebase/database';
 
 export default function ProductCatalog({ lang, onAddToCart, _onQuickView }) {
   const t = translations[lang].products;
+  const [productsData, setProductsData] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [activeCategory, setActiveCategory] = useState('all');
   const [selectedVariants, setSelectedVariants] = useState({});
   const [quickViewProduct, setQuickViewProduct] = useState(null);
+
+  useEffect(() => {
+    const productsRef = ref(database, 'products');
+
+    const unsubscribe = onValue(productsRef, async (snapshot) => {
+      try {
+        if (snapshot.exists()) {
+          const data = snapshot.val();
+          const parsedData = Array.isArray(data) ? data : Object.values(data);
+          setProductsData(parsedData);
+          // Save a cached copy directly in the user's browser for offline/error fallback
+          localStorage.setItem('cachedProducts', JSON.stringify(parsedData));
+        } else {
+          // If the database is truly empty, clear the list
+          setProductsData([]);
+        }
+      } catch (error) {
+        console.error("Error processing products from Firebase:", error);
+        const cached = localStorage.getItem('cachedProducts');
+        setProductsData(cached ? JSON.parse(cached) : []); // Fallback to cache, or empty
+      } finally {
+        setLoading(false);
+      }
+    }, (error) => {
+      console.error("Firebase real-time error:", error);
+      const cached = localStorage.getItem('cachedProducts');
+      setProductsData(cached ? JSON.parse(cached) : []); // Fallback to cache, or empty
+      setLoading(false);
+    });
+
+    // Cleanup the listener when the component unmounts
+    return () => unsubscribe();
+  }, []);
 
   const categories = [
     { id: 'all', label: t.all },
@@ -45,6 +81,13 @@ export default function ProductCatalog({ lang, onAddToCart, _onQuickView }) {
   return (
     <section id="products" className="py-10 md:py-12 bg-[#faf6ee]">
       <div className="container-custom">
+        {loading && (
+          <div className="text-center text-[#1b4332] font-bold py-10">
+            Loading products from Firebase...
+          </div>
+        )}
+        {!loading && (
+          <>
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
@@ -188,7 +231,8 @@ export default function ProductCatalog({ lang, onAddToCart, _onQuickView }) {
             );
           })}
         </div>
-
+        </>
+        )}
       </div>
 
       {/* Quick View Modal */}
