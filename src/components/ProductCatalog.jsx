@@ -192,7 +192,7 @@ export default function ProductCatalog({ lang, onAddToCart, _onQuickView }) {
                             }}
                           >
                             <div className="text-[11px] leading-tight font-medium">{variant.size}</div>
-                            <div className={`text-xs font-extrabold mt-0.5 ${isSelected ? 'text-amber-300' : 'text-[#d4a017]'}`}>
+                            <div className={`text-xs font-extrabold mt-0.5 ${isSelected ? 'text-amber-300' : 'text-[#8c6300]'}`}>
                               ₹{variant.price}
                             </div>
                           </button>
@@ -313,7 +313,7 @@ export default function ProductCatalog({ lang, onAddToCart, _onQuickView }) {
                           }}
                         >
                           <div className="text-[11px] leading-tight font-medium">{variant.size}</div>
-                          <div className={`text-xs font-extrabold mt-0.5 ${isSelected ? 'text-amber-300' : 'text-[#d4a017]'}`}>
+                          <div className={`text-xs font-extrabold mt-0.5 ${isSelected ? 'text-amber-300' : 'text-[#8c6300]'}`}>
                             ₹{variant.price}
                           </div>
                         </button>

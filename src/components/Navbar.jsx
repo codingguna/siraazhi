@@ -8,7 +8,8 @@ export default function Navbar({
   cartCount, 
   onOpenCart, 
   activeSection,
-  setActiveSection
+  setActiveSection,
+  isAdmin = false
 }) {
   const t = translations[lang];
   const [scrolled, setScrolled] = useState(false);
@@ -50,7 +51,7 @@ export default function Navbar({
       <nav className={`w-full transition-all duration-300 ${
         scrolled 
           ? 'bg-white shadow-md py-4' 
-          : 'bg-[#faf6ee] py-5'
+          : 'bg-[#faf6ee] py-4'
       }`}>
         <div className="container-custom flex items-center justify-between">
           {/* Logo */}
@@ -59,7 +60,7 @@ export default function Navbar({
             className="flex items-center gap-3 text-left group cursor-pointer border-none bg-transparent outline-none"
           >
             <img 
-              src="/assets/sirazhi_logo.png" 
+              src="/assets/siraazhi_logo.png" 
               alt="Siraazhi Logo" 
               className="h-12 w-auto object-contain group-hover:scale-105 transition-transform"
             />
@@ -78,7 +79,8 @@ export default function Navbar({
             </div>
           </button>
 
-          {/* Desktop Navigation Links */}
+          {/* Desktop Navigation Links - hidden in Admin mode (no storefront sections) */}
+          {!isAdmin && (
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <button
@@ -97,20 +99,22 @@ export default function Navbar({
               </button>
             ))}
           </div>
+          )}
 
           {/* Action Buttons: Language Switcher, Admin Toggle, Cart */}
           <div className="flex items-center gap-3">
             {/* Language Switcher */}
             <button 
               onClick={() => setLang(lang === 'en' ? 'ta' : 'en')}
-              className="hidden sm:flex items-center gap-1.5 bg-[#2d6a4f] hover:bg-[#40916c] px-3 py-1.5 rounded-full transition-all font-semibold text-xs border-none cursor-pointer shadow-sm"
+              className="hidden sm:flex items-center gap-1.5 bg-[#2d6a4f] hover:bg-[#40916c] text-white px-3 py-1.5 rounded-full transition-all font-semibold text-xs border-none cursor-pointer shadow-sm"
               title="Toggle English / Tamil"
             >
               <Globe className="w-3.5 h-3.5" />
               <span>{lang === 'en' ? 'தமிழ்' : 'English'}</span>
             </button>
 
-            {/* Shopping Cart Drawer Trigger */}
+            {/* Shopping Cart Drawer Trigger - hidden in Admin mode */}
+            {!isAdmin && (
             <button
               onClick={onOpenCart}
               className="relative p-2.5 rounded-full bg-[#1b4332] text-white hover:bg-[#2d6a4f] transition-all shadow-md flex items-center justify-center cursor-pointer"
@@ -118,19 +122,22 @@ export default function Navbar({
             >
               <ShoppingBag className="w-5 h-5 text-[#f4c430]" />
               {cartCount > 0 && (
-                <span className="absolute -top-1.5 -right-1.5 bg-[#d4a017] text-slate-950 text-xs font-extrabold w-5 h-5 rounded-full flex items-center justify-center shadow-sm border-2 border-white animate-bounce">
+                <span className="absolute -top-1.5 -right-1.5 bg-[#d4a017] text-slate-950 text-xs font-extrabold w-5 h-5 rounded-full flex items-center justify-center shadow-sm border-2 border-white">
                   {cartCount}
                 </span>
               )}
             </button>
+            )}
 
-            {/* Mobile Hamburger Toggle */}
+            {/* Mobile Hamburger Toggle - hidden in Admin mode (no storefront sections) */}
+            {!isAdmin && (
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="lg:hidden p-2 rounded-lg text-[#1b4332] hover:bg-[#e6dfcf] transition-colors"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
+            )}
           </div>
         </div>
 
@@ -154,7 +161,7 @@ export default function Navbar({
                   setLang(lang === 'en' ? 'ta' : 'en');
                   setMobileMenuOpen(false);
                 }}
-                className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#1b4332] font-bold text-sm shadow-sm"
+                className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#1b4332] text-white font-bold text-sm shadow-sm"
               >
                 <Globe className="w-4 h-4" />
                 <span>{lang === 'en' ? 'Switch to தமிழ் (Tamil)' : 'ஆங்கிலத்திற்கு மாறு (English)'}</span>

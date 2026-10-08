@@ -18,7 +18,7 @@ export default function Footer({ lang, onNavigate }) {
           <div className="lg:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
               <img 
-                src="/assets/sirazhi_logo.png" 
+                src="/assets/siraazhi_logo.png" 
                 alt="Siraazhi Logo" 
                 className="h-12 w-auto object-contain bg-white/90 p-1 rounded-xl shadow-md"
               />
@@ -110,7 +110,7 @@ export default function Footer({ lang, onNavigate }) {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-emerald-200/60 font-medium">
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-emerald-100/90 font-medium">
           <p>{t.copyright}</p>
           
           <button

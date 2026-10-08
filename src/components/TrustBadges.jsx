@@ -58,9 +58,9 @@ export default function TrustBadges({ lang }) {
           {trustItems.map((item, idx) => (
             <div 
               key={idx} 
-              className="bg-[#faf6ee] p-6 rounded-2xl border border-[#e6dfcf] hover-lift flex items-start gap-4"
+              className="bg-white p-6 rounded-2xl border border-[#e6dfcf] hover-lift flex items-start gap-4 shadow-sm"
             >
-              <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center shrink-0 shadow-sm border border-gray-100">
+              <div className="w-12 h-12 rounded-xl bg-[#faf6ee] flex items-center justify-center shrink-0 shadow-sm border border-[#e6dfcf]">
                 {item.icon}
               </div>
               <div>

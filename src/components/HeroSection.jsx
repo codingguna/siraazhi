@@ -48,7 +48,7 @@ export default function HeroSection({ lang, onExploreClick }) {
                 <p className="text-xs sm:text-sm text-[#556b62] font-semibold mt-1 leading-tight">{t.stat1Label}</p>
               </div>
               <div className="bg-white/90 p-4 rounded-2xl border border-[#e6dfcf] shadow-md hover-lift flex flex-col items-center">
-                <p className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#d4a017] font-heading">{t.stat2Val}</p>
+                <p className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#8c6300] font-heading">{t.stat2Val}</p>
                 <p className="text-xs sm:text-sm text-[#556b62] font-semibold mt-1 leading-tight">{t.stat2Label}</p>
               </div>
               <div className="bg-white/90 p-4 rounded-2xl border border-[#e6dfcf] shadow-md hover-lift flex flex-col items-center">
@@ -84,7 +84,7 @@ export default function HeroSection({ lang, onExploreClick }) {
               </div>
 
               {/* Floating Quality Badge */}
-              <div className="absolute -top-5 -left-5 bg-white p-3.5 rounded-2xl shadow-xl border border-amber-200 flex items-center gap-3 animate-bounce">
+              <div className="absolute -top-5 -left-5 bg-white p-3.5 rounded-2xl shadow-xl border border-amber-200 flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-[#1b4332]">
                   <Award className="w-6 h-6 text-[#d4a017]" />
                 </div>

@@ -77,7 +77,7 @@ export default function CartDrawer({
         <div className="flex-1 overflow-y-auto p-5 space-y-4">
           {cartItems.length === 0 ? (
             <div className="py-16 text-center space-y-3">
-              <div className="w-16 h-16 rounded-full bg-[#faf6ee] text-gray-400 flex items-center justify-center mx-auto border border-[#e6dfcf]">
+              <div className="w-16 h-16 rounded-full bg-[#faf6ee] text-[#556b62] flex items-center justify-center mx-auto border border-[#e6dfcf]">
                 <ShoppingBag className="w-8 h-8" />
               </div>
               <p className="text-sm font-semibold text-[#556b62]">
@@ -102,7 +102,7 @@ export default function CartDrawer({
                   <p className="text-[11px] text-[#556b62] font-semibold">
                     Size: {item.size}
                   </p>
-                  <p className="text-sm font-bold text-[#d4a017]">
+                  <p className="text-sm font-bold text-[#8c6300]">
                     ₹{item.price}
                   </p>
                 </div>
@@ -154,7 +154,7 @@ export default function CartDrawer({
 
               <div className="flex justify-between text-base font-extrabold text-[#1b4332] pt-2 border-t border-gray-200">
                 <span>{t.itemTotal}:</span>
-                <span className="text-[#d4a017]">₹{grandTotal}</span>
+                <span className="text-[#8c6300]">₹{grandTotal}</span>
               </div>
             </div>
 
@@ -184,7 +184,7 @@ export default function CartDrawer({
 
             {orderPlaced ? (
               <div className="py-8 text-center space-y-4">
-                <div className="w-20 h-20 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto border-4 border-emerald-200 animate-bounce">
+                <div className="w-20 h-20 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto border-4 border-emerald-200">
                   <CheckCircle2 className="w-12 h-12" />
                 </div>
                 <h3 className="text-2xl font-extrabold text-[#1b4332] font-heading">
@@ -313,7 +313,7 @@ export default function CartDrawer({
 
                 <div className="bg-[#faf6ee] p-3.5 rounded-xl border border-[#e6dfcf] flex items-center justify-between text-xs">
                   <span>Payable Amount:</span>
-                  <span className="text-xl font-extrabold text-[#d4a017]">₹{grandTotal}</span>
+                  <span className="text-xl font-extrabold text-[#8c6300]">₹{grandTotal}</span>
                 </div>
 
                 <button

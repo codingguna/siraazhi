@@ -143,7 +143,7 @@ export default function RecipesSection({ lang }) {
             return (
               <div 
                 key={recipe.id}
-                className="bg-[#faf6ee] rounded-3xl overflow-hidden border border-[#e6dfcf] hover-lift flex flex-col justify-between shadow-xs"
+                className="bg-white rounded-3xl overflow-hidden border border-[#e6dfcf] hover-lift flex flex-col justify-between shadow-sm"
               >
                 {/* Image */}
                 <div className="relative h-52 bg-gray-100 overflow-hidden shrink-0">
@@ -166,13 +166,13 @@ export default function RecipesSection({ lang }) {
                       {title}
                     </h3>
                     
-                    {/* Recommended Oil Badge */}
-                    <div className="flex items-start gap-3 bg-white p-3.5 rounded-2xl border border-emerald-100 shadow-sm hover:shadow-md transition-shadow">
+                      {/* Recommended Oil Badge */}
+                      <div className="flex items-start gap-3 bg-[#faf6ee] p-3.5 rounded-2xl border border-emerald-100 shadow-sm">
                       <div className="w-8 h-8 rounded-full bg-emerald-50 flex items-center justify-center shrink-0 border border-emerald-200">
                         <Droplets className="w-4 h-4 text-emerald-600" />
                       </div>
                       <div>
-                        <span className="text-[10px] font-extrabold text-[#d4a017] uppercase tracking-wider block mb-1">
+                        <span className="text-[10px] font-extrabold text-[#8c6300] uppercase tracking-wider block mb-1">
                           Recommended Oil
                         </span>
                         <p className="text-xs font-bold text-[#1b4332] leading-snug">
@@ -196,7 +196,7 @@ export default function RecipesSection({ lang }) {
                     </button>
 
                     {isExpanded && (
-                      <div className="bg-white p-5 rounded-2xl border border-[#e6dfcf] text-left space-y-5 text-xs animate-fadeIn shadow-lg relative overflow-hidden">
+                      <div className="bg-[#faf6ee] p-5 rounded-2xl border border-[#e6dfcf] text-left space-y-5 text-xs animate-fadeIn shadow-sm relative overflow-hidden">
                         <div className="absolute top-0 left-0 w-1.5 h-full bg-[#d4a017]"></div>
                         <div>
                           <p className="font-extrabold text-[#1b4332] mb-3 uppercase tracking-wide border-b border-gray-100 pb-1.5">

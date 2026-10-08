@@ -91,7 +91,7 @@ export default function App() {
       
       {/* Toast Alert Banner */}
       {toast && (
-        <div className="fixed bottom-6 right-6 z-50 animate-bounce">
+        <div className="fixed bottom-6 right-6 z-[70] animate-fadeIn" role="status" aria-live="polite">
           <div className={`px-5 py-3 rounded-2xl shadow-xl border flex items-center gap-3 text-xs font-extrabold ${
             toast.type === 'error'
               ? 'bg-red-900 text-white border-red-700'

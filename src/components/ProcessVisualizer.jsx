@@ -112,7 +112,7 @@ export default function ProcessVisualizer({ lang }) {
         </div>
 
         {/* Active Step Detailed Card */}
-        <div className="bg-[#faf6ee] rounded-3xl p-6 sm:p-10 border border-[#e6dfcf] shadow-xs">
+        <div className="bg-white rounded-3xl p-6 sm:p-10 border border-[#e6dfcf] shadow-sm">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             {/* Left Detail */}
@@ -130,7 +130,7 @@ export default function ProcessVisualizer({ lang }) {
                 {steps[activeStep].desc}
               </p>
 
-              <div className="bg-white p-4 rounded-2xl border border-amber-200 shadow-xs flex items-center gap-3">
+              <div className="bg-[#faf6ee] p-4 rounded-2xl border border-amber-200 shadow-xs flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-[#fdf6e2] flex items-center justify-center shrink-0 border border-amber-300">
                   <Sparkles className="w-5 h-5 text-[#d4a017]" />
                 </div>
