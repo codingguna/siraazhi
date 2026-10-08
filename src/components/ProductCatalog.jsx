@@ -47,7 +47,8 @@ export default function ProductCatalog({ lang, onAddToCart, _onQuickView }) {
 
   const categories = [
     { id: 'all', label: t.all },
-    { id: 'oils', label: t.oils }
+    { id: 'oils', label: t.oils },
+    { id: 'seeds', label: t.seeds }
   ];
 
   const filteredProducts = activeCategory === 'all' 
